@@ -5,6 +5,7 @@ import CharacterDetails from './components/characterDetails';
 import Comics from './components/comics';
 import ComicPage from "./components/comicPage";
 import './App.css';
+import NotFound from './components/notFound';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/characters/:id" element={<CharacterDetails />} />
         <Route path="/comics" element={<Comics />} />
         <Route path="/comic/:id" element={<ComicPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
