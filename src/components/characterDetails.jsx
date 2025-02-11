@@ -1,34 +1,44 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import "../App.css";
+
+const API_KEY = import.meta.env.VITE_MARVEL_API_KEY; // Securely access API key
 
 const CharacterDetails = () => {
-const { id } = useParams();
-const [character, setCharacter] = useState(null);
-const [loading, setLoading] = useState(true);
+    const { id } = useParams(); // Get character ID from URL
+    const [character, setCharacter] = useState(null);
 
-useEffect(() => {
-    const fetchCharacterDetails = async () => {
-    const apiKey = 'a44c379606a95921e3f0abef512638a9';
-    const response = await fetch(
-        `https://gateway.marvel.com/v1/public/characters/${id}?apikey=${apiKey}`
+    useEffect(() => {
+        const fetchCharacterDetails = async () => {
+            try {
+                const response = await axios.get(
+                    `https://gateway.marvel.com/v1/public/characters/${id}?apikey=${API_KEY}`
+                );
+                setCharacter(response.data.data.results[0]); // Get first result
+            } catch (error) {
+                console.error("Error fetching character details", error);
+            }
+        };
+
+        fetchCharacterDetails();
+    }, [id]);
+
+    if (!character) {
+        return <p>Loading character details...</p>;
+    }
+    console.log("Character ID:", id); // Debugging
+    
+    return (
+        <div>
+            <h1>{character.name}</h1>
+            <img 
+                src={`${character.thumbnail.path}.${character.thumbnail.extension}`} 
+                alt={character.name} 
+            />
+            <p>{character.description || "No description available."}</p>
+        </div>
     );
-    const data = await response.json();
-    setCharacter(data.data.results[0]);
-    setLoading(false);
-    };
-
-    fetchCharacterDetails();
-}, [id]);
-
-if (loading) return <p>Loading...</p>;
-
-return (
-    <div>
-    <h2>{character.name}</h2>
-    <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
-    <p>{character.description || 'No description available.'}</p>
-    </div>
-);
 };
 
 export default CharacterDetails;
