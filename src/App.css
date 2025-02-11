@@ -162,3 +162,23 @@ footer {
   background-color: #FCA311;
   color: black;
 }
+
+/* ------------------------------------ Home -------------------------------------------- */
+
+.home {
+  background-image: url('/psylocke.jpg');
+  background-size: cover; /* Ensures the image covers the entire page */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Prevents background from scrolling */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Ensures the height of the home section is the full viewport height */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  overflow: hidden; /* Prevents scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* Optional: for better text visibility */
+}
