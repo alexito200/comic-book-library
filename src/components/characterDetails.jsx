@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-const API_KEY = import.meta.env.VITE_MARVEL_API_KEY; // Securely access API key
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const CharacterDetails = () => {
     const { id } = useParams(); // Get character ID from URL
@@ -22,6 +22,14 @@ const CharacterDetails = () => {
         };
 
         fetchCharacterDetails();
+
+        // Add class to body to disable scroll when this component mounts
+        document.body.classList.add("no-scroll");
+
+        // Remove the class when component unmounts
+        return () => {
+            document.body.classList.remove("no-scroll");
+        };
     }, [id]);
 
     if (!character) {
@@ -30,13 +38,15 @@ const CharacterDetails = () => {
     console.log("Character ID:", id); // Debugging
     
     return (
-        <div>
+        <div className="characterDetailsContainer">
             <h1>{character.name}</h1>
             <img 
                 src={`${character.thumbnail.path}.${character.thumbnail.extension}`} 
                 alt={character.name} 
             />
-            <p>{character.description || "No description available."}</p>
+            <div className="characterCard">
+                <p>{character.description || "No description available."}</p>
+            </div>
         </div>
     );
 };

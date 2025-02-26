@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "../App.css";
 
-const API_KEY = import.meta.env.VITE_MARVEL_API_KEY; // Securely access API key
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const ComicPage = () => {
     const { id } = useParams();
@@ -28,17 +29,24 @@ const ComicPage = () => {
     }
 
     return (
-        <div>
-            <h2>{comic.title}</h2>
-            <img
-                src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                alt={comic.title}
-            />
+<div className="comicPageContainer">
+    <h1>{comic.title}</h1> {/* Header stays above */}
+
+    <div className="comicPageContent"> 
+        <img 
+            src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} 
+            alt={comic.title} 
+        />
+
+        <div className="comicPageCard">
             <p>{comic.description ? comic.description : "No description available."}</p>
             <p><strong>Page Count:</strong> {comic.pageCount}</p>
             <p><strong>Series:</strong> {comic.series.name}</p>
             <p><strong>Creators:</strong> {comic.creators.items.map(creator => creator.name).join(", ")}</p>
         </div>
+    </div>
+</div>
+
     );
 };
 

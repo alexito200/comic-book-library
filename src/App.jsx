@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './components/home';
 import BrowseCharacters from './components/browseCharacters';
 import CharacterDetails from './components/characterDetails';
 import Comics from './components/comics';
@@ -10,11 +10,14 @@ import NotFound from './components/notFound';
 const App = () => {
   return (
     <div>
-      <nav>
-        <Link to="/">Home</Link> |  
-        <Link to="/characters">Characters</Link> |  
-        <Link to="/comics">Comics</Link>
-      </nav>
+<nav>
+  <div className="nav-container">
+    <Link to="/">Home</Link>
+    <Link to="/characters">Characters</Link>
+    <Link to="/comics">Comics</Link>
+  </div>
+</nav>
+
 
       <Routes>
         <Route path="/" element={<Home />} />
