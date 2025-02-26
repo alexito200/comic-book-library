@@ -8,6 +8,12 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://gateway.marvel.com/v1/public/characters";
 const LIMIT = 40; // Set limit to 40 per page
 
+if (import.meta.env.MODE === "development") {
+    console.log("Running in Development Mode");
+  } else if (import.meta.env.MODE === "production") {
+    console.log("Running in Production Mode");
+  }
+  
 const BrowseCharacters = () => {
     const [characters, setCharacters] = useState([]);
     const [selectedLetter, setSelectedLetter] = useState("A");
