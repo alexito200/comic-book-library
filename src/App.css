@@ -1,17 +1,16 @@
 body {
   font-family: Arial, sans-serif;
-  padding-top: 100px;
   color: #333;
-    background-image: url('/purple-sky.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-  
+  background-image: url('/purple-sky.jpg'); /* Default background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: background 0.3s ease-in-out;
 }
 html, body {
   margin: 0;
@@ -75,7 +74,30 @@ nav a:hover {
   text-decoration: underline;
 }
 .home {
+  background-image: url('/psylocke.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .home {
+    background-attachment: scroll;
+    background-size: cover;
+  }
 }
 .homeTitle {
   position: absolute; /* Allows precise positioning */
@@ -98,7 +120,23 @@ nav a:hover {
   -o-background-clip: text; /* Opera */
   -webkit-text-fill-color: transparent; /* Works in Chrome, Safari, Edge, Opera */
 }
+@media (max-width: 1024px) {
+  .homeTitle {
+    font-size: 12em;
+  }
+}
 
+@media (max-width: 768px) {
+  .homeTitle {
+    font-size: 12em;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeTitle {
+    font-size: 8em;
+  }
+}
 .homeTitle span {
   font-size: 0.9em;
   font-weight: normal;
@@ -406,21 +444,33 @@ footer {
 
 /* ----------------------------------------------------------------------------- Home -------------------------------------------- */
 
-.home {
+/* .home {
   background-image: url('/psylocke.jpg');
-  background-size: cover; /* Ensures the image covers the entire viewport */
-  background-position: center; /* Centers the image */
-  background-attachment: fixed; /* Keeps background in place when scrolling */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white; /* Ensures text stands out */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
 }
+
+@media (max-width: 768px) {
+  .home {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+} */
+
+
 
 /* -----------------------------------------------------------Not Found--------------------------------------------------------------- */
 .notFoundContainer {
