@@ -35,6 +35,15 @@ To get a local copy up and running follow these simple example steps.
   ```sh
   npm install npm@latest -g
   ```
+### Setting Up the Marvel API
+1. **Create a Marvel Developer account:**  
+   Sign up at [Marvel Developer](https://developer.marvel.com/) to obtain your **Marvel API key**.
+
+2. **Set Up Your API Key in Your Code:**  
+   Once you have your API key, place it in your environment variables and reference it in your code like this:
+
+   ```javascript
+   const API_KEY = import.meta.env.VITE_API_KEY;
 
 ### Installation
 
@@ -64,36 +73,46 @@ This section will provide an explanation of the inner workings of the app
 ### Home
 The home page for my Marvel API app features a navbar with a few links, a welcome message to the user and an awesomely posed Psylocke as the background image.
 
-![psylocke-home](https://github.com/user-attachments/assets/7043f14d-ca4a-4472-a1f5-9611ed7bc687)
+![image](https://github.com/user-attachments/assets/1ca33cb8-1968-4d97-91ee-b9f8151ba466)
+
 
 
 ### Browse Characters
 After clicking on the Characters link in the Home page navbar, the user is directed to a library of characters to choose from. Marvel API makes it easy to access their characters' names, image, and even some lore. The Characters page features an alphabetical navigation system ranging from A-Z. 
 
-![marvel-characters](https://github.com/user-attachments/assets/657fa8ae-e181-47b6-bc24-0f11e65a3772)
+![image](https://github.com/user-attachments/assets/d506f028-38b9-4fcd-b2a4-e6860826d003)
+
+![image](https://github.com/user-attachments/assets/e13e9b7a-40b1-4ac9-9ab5-d0ee06c52552)
+
 
 
 ### Character Details
 After clicking on a Character card, the user is directed to the Character Details page. The user will be able to read some lore on the character and see an image. 
 
-![marvel-character-details](https://github.com/user-attachments/assets/d9622cb5-fec3-4325-a43e-7edb25cb763f)
+![image](https://github.com/user-attachments/assets/b6206d77-8ebd-4c0a-91d6-004ef05e22ac)
+
 
 
 ### Comics
 The Comics page provides the user with an extravagantly wide range of comics to choose from. This page features an alphabetical nav system to make the experience more seamless for the user. The user is able to see the cards lined up in a grid layout and is also able to view the comic image and the comic title.
 
-![marvel-comics](https://github.com/user-attachments/assets/2d5b751f-4717-475a-9d2e-7bfcaeed356d)
+![image](https://github.com/user-attachments/assets/0049a2c6-2760-4987-950a-16ba7ee0c98d)
+
+![image](https://github.com/user-attachments/assets/0b109f10-46fe-4c78-9747-3d29d947c384)
+
 
 
 ### Comic Page
 The comic page is filled with details for the user to read. This page features the comic title, comic image, page count, series, creators, and some awesome lore for the user.
 
-![marvel-comic-details](https://github.com/user-attachments/assets/185e77ac-7148-4cd1-a898-720e3a93ba22)
+![image](https://github.com/user-attachments/assets/128b1257-da91-4c08-85f0-09add76ed590)
+
 
 ### Not Found
 The Not Found component was created to bring the user back to the Marvel API page in case they get lost. The Not Found page is a 404 error page that includes the navbar and an additional link to the app's home page for the user to get back.
 
-![marvel-not-found](https://github.com/user-attachments/assets/a99515f0-010d-4b0e-977a-bbeaeef5755f)
+![image](https://github.com/user-attachments/assets/c5ca19d8-74c8-4128-baa8-9da210bec909)
+
 
 
 ### App
