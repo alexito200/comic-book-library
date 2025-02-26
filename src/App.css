@@ -155,7 +155,7 @@ footer {
 }
 /* --------------------------------------------------------------------------------------Characters-------------------------------------------- */
 .charactersContainer {
-  margin-top: 5%;
+  margin-top: 6em;
 }
 .charactersContainer h1 {
   background: linear-gradient(135deg, #eb01fc, #ffc1f4, #460046, #000000);
@@ -208,37 +208,97 @@ footer {
   align-items: center; /* Center contents horizontally */
   justify-content: center; /* Center contents vertically */
   text-align: center;
-  margin-top: 5%;
+  margin-top: 4em;
   max-width: 100vw; /* Ensures it does not overflow */
-  padding: 0 10px; /* Adds small padding to prevent overflow */
+  padding: 0 20px; /* Adds small padding to prevent overflow */
   box-sizing: border-box; /* Prevents unwanted width expansion */
 }
+
+/* Responsive Heading */
 .characterDetailsContainer h1 {
   color: white;
+  font-size: 3em; /* Default large size */
+  margin-bottom: 20px;
 }
 
+/* Responsive Character Image */
 .characterDetailsContainer img {
-  width: 25%; /* Shrinks image to half of its original size */
+  width: 30%; /* Default size */
   height: auto; /* Maintains aspect ratio */
   display: block;
   margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 8px; /* Smooth edges */
+  transition: all 0.3s ease-in-out; /* Smooth resizing */
 }
 
+/* Responsive Character Details Card */
 .characterDetailsContainer .characterCard {
-  background: rgba(211, 211, 211, 0.2); /* Light grey background with 70% opacity */
+  background: rgba(211, 211, 211, 0.2); /* Light grey background with transparency */
   color: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 600px; /* Limits the width */
+  max-width: 600px; /* Limits width */
   width: 80%; /* Makes it responsive */
   text-align: center;
   margin-top: 20px;
+  font-size: 1.2em; /* Default text size */
+  transition: all 0.3s ease-in-out; /* Smooth resizing */
 }
+
+/* 🛠 Responsive Adjustments for Different Screen Sizes */
+@media (max-width: 1024px) {
+  .characterDetailsContainer h1 {
+    font-size: 2.5em;
+  }
+  
+  .characterDetailsContainer img {
+    width: 40%; /* Increase image size on medium screens */
+  }
+
+  .characterDetailsContainer .characterCard {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .characterDetailsContainer h1 {
+    font-size: 2em;
+  }
+
+  .characterDetailsContainer img {
+    width: 50%; /* Increase size for better visibility */
+  }
+
+  .characterDetailsContainer .characterCard {
+    width: 90%; /* Make card take up more space */
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .characterDetailsContainer h1 {
+    font-size: 1.8em; /* Smaller title for small screens */
+  }
+
+  .characterDetailsContainer img {
+    width: 60%; /* Further increase size for mobile */
+  }
+
+  .characterDetailsContainer .characterCard {
+    width: 95%;
+    font-size: 0.9em;
+  }
+}
+
 
 
 /* ----------------------------------------------------------------------------- Comics ----------------------------------------------- */
 .comicContainer {
-  margin-top: 5%;
+  margin-top: 6em;
+}
+.charactersContainer, 
+.comicContainer {
+  padding-bottom: 2em; /* Adds extra space below pagination */
 }
 .comicContainer h1 {
   background: linear-gradient(135deg, #eb01fc, #ffc1f4, #460046, #000000);
@@ -325,7 +385,7 @@ footer {
   flex-wrap: wrap; /* Allows buttons to wrap onto new rows */
   justify-content: center; /* Centers buttons */
   gap: 10px; /* Space between buttons */
-  margin: 20px 2em; /* 2em margin on the left and right */
+  margin: 20px 2em 40px; /* 2em margin on the left and right */
   width: calc(100% - 4em); /* Prevents overflow while accounting for margins */
   overflow: hidden; /* Prevents horizontal scrolling */
 }
@@ -440,36 +500,6 @@ footer {
     width: 90%; /* Make the card take full width */
   }
 }
-
-
-/* ----------------------------------------------------------------------------- Home -------------------------------------------- */
-
-/* .home {
-  background-image: url('/psylocke.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .home {
-    background-attachment: scroll;
-    background-size: cover;
-  }
-} */
-
 
 
 /* -----------------------------------------------------------Not Found--------------------------------------------------------------- */
